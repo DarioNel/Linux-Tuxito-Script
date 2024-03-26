@@ -47,7 +47,7 @@ while [[ $aux -ne 1 && $aux -ne 2 && $aux -ne 3 && $aux -ne 4 ]]; do
 		mkdir -p /root/.config
 		cp -v -r mate /root/.config/
 		apt install mate-core lightdm mate-panel mate-applet-brisk-menu mate-menu marco mate-session-manager mate-control-center mate-tweak caja mate-power-manager  gnome-disk-utility mate-system-monitor mate-terminal network-manager-gnome mate-utils mate-media pluma eom atril -y
-        echo "La Instalacion se a realizado exitosamente"
+                echo "La Instalacion se a realizado exitosamente"
 		aux=2
 		;;
 		3)
@@ -55,9 +55,9 @@ while [[ $aux -ne 1 && $aux -ne 2 && $aux -ne 3 && $aux -ne 4 ]]; do
   		updates
 		apt install xfdesktop4 lightdm xfce4-panel xfce4-whiskermenu-plugin xfwm4 xfce4-session xfce4-settings thunar xfce4-power-manager gnome-disk-utility  xfce4-taskmanager xfce4-terminal network-manager-gnome xfce4-screenshooter xfce4-notifyd mugshot xfce4-pulseaudio-plugin mousepad ristretto evince -y
 		SystemApps
-    	mkdir -p /root/.config
+    		mkdir -p /root/.config
 		cp -v -r xfce4 /root/.config/
-        echo "La Instalacion se a realizado exitosamente"
+	        echo "La Instalacion se a realizado exitosamente"
 		aux=3
 		;;
 		4)
@@ -66,7 +66,7 @@ while [[ $aux -ne 1 && $aux -ne 2 && $aux -ne 3 && $aux -ne 4 ]]; do
 		apt install xorg lightdm i3status rofi i3 thunar xfce4-power-manager kitty xfce4-screenshooter light-locker lxappearance policykit-1-gnome picom eog evince mousepad -y
 		SystemApps
   		mkdir -p /root/.config/
-    	mkdir -p /root/.config/i3/
+  	  	mkdir -p /root/.config/i3/
 		mkdir -p /root/.config/gtk-3.0/
   		cp -v config /root/.config/i3/
 		# Borramos el archivo settings.ini con un echo vacio.
@@ -93,7 +93,7 @@ while [[ $aux -ne 1 && $aux -ne 2 && $aux -ne 3 && $aux -ne 4 ]]; do
 		# Imprimimos el contenido dentro del archivo settings.ini con todas las configuraciones.
 		echo "$i3theme" > /root/.config/gtk-3.0/settings.ini
 		#cp -v settings.ini /root/.config/gtk-3.0/
-        echo "La Instalacion se a realizado exitosamente"
+	        echo "La Instalacion se a realizado exitosamente"
 		aux=4
 		;;
 		0)
@@ -172,7 +172,6 @@ ID=debian
 HOME_URL="https://www.debian.org/"
 SUPPORT_URL="https://www.debian.org/support"
 BUG_REPORT_URL="https://bugs.debian.org/"
-
 "
 # Imprimimos el contenido dentro del archivo os-release con todas las configuraciones.
 echo "$distro" > /etc/os-release
