@@ -162,7 +162,7 @@ cp -v config.conf /root/.config/neofetch/
 echo "" > /etc/os-release
 
 # Creamos una variable donde ponemos las configuraciones en un string
-distro="
+distro='
 PRETTY_NAME="Tuxito-OS GNU/Linux"
 NAME="Tuxito-OS GNU/Linux"
 VERSION_ID="12"
@@ -172,7 +172,7 @@ ID=debian
 HOME_URL="https://www.debian.org/"
 SUPPORT_URL="https://www.debian.org/support"
 BUG_REPORT_URL="https://bugs.debian.org/"
-"
+'
 # Imprimimos el contenido dentro del archivo os-release con todas las configuraciones.
 echo "$distro" > /etc/os-release
 
