@@ -2,12 +2,12 @@
 
 # Declaramos la funcion actualizar el sistema
 function updates(){
-        echo "vamos a actualizar el sistema"
+        echo "Vamos a actualizar el sistema"
         apt update && apt upgrade -y
-        echo "el sistema fue acutalizado correctamente"
+        echo "El sistema fue acutalizado correctamente"
 }
 
-# Declaramos una funcion con los programas esenciales del sistema
+# Declaramos una funcion con los programas esenciales para el sistema
 
 function SystemApps(){
         echo "Vamos a Instalar las aplicaciones necesarias del sistema"
@@ -92,7 +92,6 @@ while [[ $aux -ne 1 && $aux -ne 2 && $aux -ne 3 && $aux -ne 4 ]]; do
 		"
 		# Imprimimos el contenido dentro del archivo settings.ini con todas las configuraciones.
 		echo "$i3theme" > /root/.config/gtk-3.0/settings.ini
-		#cp -v settings.ini /root/.config/gtk-3.0/
 	        echo "La Instalacion se a realizado exitosamente"
 		aux=4
 		;;
@@ -176,14 +175,41 @@ BUG_REPORT_URL="https://bugs.debian.org/"
 # Imprimimos el contenido dentro del archivo os-release con todas las configuraciones.
 echo "$distro" > /etc/os-release
 
+# Desabilitamos algunas configuraciones en el adaptador, para poder scanear las redes.
+
+# Borramos el archivo interfaces con un echo vacio.
+echo "" > /etc/network/interfaces
+
+# Creamos una variable donde ponemos las configuraciones en un string
+net="
+# This file describes the network interfaces available on your system
+# and how to activate them. For more information, see interfaces(5).
+
+source /etc/network/interfaces.d/*
+
+# The loopback network interface
+auto lo
+iface lo inet loopback
+
+# The primary network interface
+#allow-hotplug [adaptador]
+#iface [adaptador] inet dhcp
+#       wpa-ssid red
+#       wpa-psk  passwd
+"
+# Imprimimos el contenido dentro del archivo interfaces con todas las configuraciones.
+echo "$net" > /etc/network/interfaces
+
+# Agregamos nuestro usuario al archivo sudores
+
+echo "# Damos privilegios de sudo a nuestro usuario" >> /etc/sudoers
+echo "linux  ALL=(ALL:ALL) ALL" >> /etc/sudoers
+
 # Copiamos toda la configuracion del usuario root al usuario que creamos
 cp -v -r /root/.config/ /home/linux
 
 # Cambiar los permisos de usuario
 chown -R linux:linux /home/linux/.config
-
-# Desabilitamos algunas configuraciones en el adaptador, para scanear redes.
-# nano /etc/network/interfaces
 
 # Agregar al PATH las rutas del sistema para el usuario que creamos instalacion
 echo "export PATH=$PATH:/bin:/usr/bin:/sbin:/usr/sbin" >> /home/linux/.bashrc
