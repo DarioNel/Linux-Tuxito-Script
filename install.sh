@@ -47,7 +47,7 @@ while [[ $aux -ne 1 && $aux -ne 2 && $aux -ne 3 && $aux -ne 4 ]]; do
 		mkdir -p /root/.config
 		cp -v -r mate /root/.config/
 		apt install mate-core lightdm mate-panel mate-applet-brisk-menu mate-menu marco mate-session-manager mate-control-center mate-tweak caja mate-power-manager  gnome-disk-utility mate-system-monitor mate-terminal network-manager-gnome mate-utils mate-media pluma eom atril -y
-                echo "La Instalacion se a realizado exitosamente"
+      		echo "La Instalacion se a realizado exitosamente"
 		aux=2
 		;;
 		3)
@@ -63,7 +63,7 @@ while [[ $aux -ne 1 && $aux -ne 2 && $aux -ne 3 && $aux -ne 4 ]]; do
 		4)
 		echo "Instalando i3wm"
   		updates
-		apt install xorg lightdm i3status rofi i3 thunar xfce4-power-manager kitty xfce4-screenshooter light-locker lxappearance policykit-1-gnome picom eog evince mousepad -y
+		apt install xorg lightdm i3status rofi i3 thunar xfce4-power-manager kitty xfce4-screenshooter light-locker lxappearance policykit-1-gnome picom eom atril mousepad -y
 		SystemApps
   		mkdir -p /root/.config/
   	  	mkdir -p /root/.config/i3/
