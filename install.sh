@@ -11,7 +11,7 @@ function updates(){
 
 function SystemApps(){
         echo "Vamos a Instalar las aplicaciones necesarias del sistema"
-        apt install sudo ufw iputils-ping net-tools network-manager wireless-tools pulseaudio pavucontrol tree neofetch htop synaptic build-essential ntfs-3g gvfs-backends gvfs-fuse numlockx fonts-arphic-uming fonts-ipafont-mincho fonts-unfonts-core papirus-icon-theme dmz-cursor-theme libreoffice libreoffice-gtk3 firefox-esr vlc cheese simple-scan -y
+        apt install sudo ufw iputils-ping net-tools network-manager wireless-tools pulseaudio pavucontrol tree neofetch htop synaptic build-essential ntfs-3g gvfs-backends gvfs-fuse numlockx fonts-arphic-uming fonts-ipafont-mincho fonts-unfonts-core papirus-icon-theme dmz-cursor-theme libreoffice libreoffice-gtk3 firefox-esr vlc cheese simple-scan mate-calc -y
         echo "Los paquetes fueron instalados correctamente"
 }
 
