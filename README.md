@@ -1,5 +1,3 @@
-# LinuxDesktop
-
 # Atajos de Teclado para i3wm
 
 # Autor: DarioNel
