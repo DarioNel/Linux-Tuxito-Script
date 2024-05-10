@@ -1,3 +1,9 @@
+# Para instalar debe ingresar a :
+cd tuxito                    # Ingresar al directorio tuxito
+sudo chmod +x install.sh     # Dar permisos de ejecición
+./install.sh                 # Ejecutar el scrpit
+# Menu de instalacion
+![alt text](menu-instalacion.png)
 # Atajos de Teclado para i3wm
 
 # Autor: DarioNel
