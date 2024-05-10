@@ -19,16 +19,27 @@ function SystemApps(){
 while [[ $aux -ne 1 && $aux -ne 2 && $aux -ne 3 && $aux -ne 4 ]]; do
 	# Selecion del entorno de escritorio
 	echo ""
-	echo "Bienvenido, acontinuación elija el escritorio que desea instalar"
+	echo -e "\e[33m#-----------------------------------------------------------------------------#\e[m"
+	echo -e "\033[0;33m _     _                    _____           _ _               ___  ____  "
+	echo -e "| |   (_)_ __  _   ___  __ |_   _|   ___  _(_) |_ ___        / _ \/ ___| "
+	echo -e "| |   | | '_ \| | | \ \/ /   | || | | \ \/ / | __/ _ \ _____| | | \___ \ "
+	echo -e "| |___| | | | | |_| |>  <    | || |_| |>  <| | || (_) |_____| |_| |___) |"
+	echo -e "|_____|_|_| |_|\__,_/_/\_\   |_| \__,_/_/\_\_|\__\___/       \___/|____/ "
+	echo -e "\033[0m"
+	#
+	echo -e "\e[34m-Bienvenido a la instalacion de Linux Tuxito-OS"
+	echo -e "\e[34m-Autor: DarioNel\e[m"
+	echo -e "\e[33m#-----------------------------------------------------------------------------#\e[m"
+	echo -e "\e[34mAcontinuación elija el escritorio que desea instalar"
 	echo ""
-	echo "Presione"
-	echo ""
-	echo " 1 Para instalar Gnome Desktop"
-	echo " 2 Para instalar Mate Desktop"
-	echo " 3 Para instalar Xfce Desktop"
-	echo " 4 Para instalar i3wm"
-	echo " 0 Para salir de la instalación"
-	echo ""
+	echo -e "Presione\e[m"
+	echo -e ""
+	echo -e "\e[32m 1 Para instalar Gnome Desktop"
+	echo -e " 2 Para instalar Mate Desktop"
+	echo -e " 3 Para instalar Xfce Desktop"
+	echo -e " 4 Para instalar i3wm"
+	echo -e " 0 Para salir de la instalación"
+	echo -e "\e[32m"
 	read desktop
 
 	case $desktop in
@@ -96,7 +107,7 @@ while [[ $aux -ne 1 && $aux -ne 2 && $aux -ne 3 && $aux -ne 4 ]]; do
 		aux=4
 		;;
 		0)
-		echo "Saliendo de la instalacion"
+		echo "Saliendo de la instalacion ..."
 		exit
 		;;
 		*)
