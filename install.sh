@@ -37,9 +37,9 @@ while [[ $aux -ne 1 && $aux -ne 2 && $aux -ne 3 && $aux -ne 4 ]]; do
 	echo -e "\e[32m 1 Para instalar Gnome Desktop"
 	echo -e " 2 Para instalar Mate Desktop"
 	echo -e " 3 Para instalar Xfce Desktop"
-	echo -e " 4 Para instalar i3wm"
-	echo -e " 0 Para salir de la instalación"
-	echo -e "\e[32m"
+	echo -e " 4 Para instalar i3wm\e[32m"
+	echo -e "\e[31m 0 Para salir de la instalación\e[m"
+	#echo -e "\e[32m"
 	read desktop
 
 	case $desktop in
