@@ -3,12 +3,16 @@
 # Autor: DarioNel
 
 # Fecha de Creación 03-03-2024 10-05-2024
-
-# Para instalar debe ingresar a :
-
-cd tuxito                    # Ingresar al directorio tuxito
+# INSTALACIÓN
+Clonar el repositorio   git clone https://github.com/DarioNel/tuxito.git
+Ingresar al repositorio cd tutxito
+Editar el archivo install.sh nano install.sh y cambiar el usuario 
+"linux" por tu usuario asi como se muestra en la siguiente figura
+![alt text](cambiar-user.png)
+# Para instalar debe dar permisos :
 sudo chmod +x install.sh     # Dar permisos de ejecición
 ./install.sh                 # Ejecutar el scrpit
+
 # Menu de instalación
 ![alt text](menu-instalacion.png)
 # Gestor de ventanas i3

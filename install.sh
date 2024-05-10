@@ -217,14 +217,14 @@ echo "# Damos privilegios de sudo a nuestro usuario" >> /etc/sudoers
 echo "linux  ALL=(ALL:ALL) ALL" >> /etc/sudoers
 
 # Copiamos toda la configuracion del usuario root al usuario que creamos
-cp -v -r /root/.config/ /home/linux
+cp -v -r /root/.config/ /home/linux    # <---CAMBIAR EL USUARIO linux por tu usuario
 
 # Cambiar los permisos de usuario
-chown -R linux:linux /home/linux/.config
+chown -R linux:linux /home/linux/.config   # <---CAMBIAR EL USUARIO linux por tu usuario
 
 # Agregar al PATH las rutas del sistema para el usuario que creamos instalacion
-echo "export PATH=$PATH:/bin:/usr/bin:/sbin:/usr/sbin" >> /home/linux/.bashrc
-source /home/linux/.bashrc
+echo "export PATH=$PATH:/bin:/usr/bin:/sbin:/usr/sbin" >> /home/linux/.bashrc   # <---CAMBIAR EL USUARIO linux por tu usuario
+source /home/linux/.bashrc  # <---CAMBIAR EL USUARIO linux por tu usuario
 
 # Habilitamos el firewall
 ufw enable
