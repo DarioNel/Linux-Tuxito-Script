@@ -235,4 +235,4 @@ bindsym Control+Shift+1 exec --no-startup-id systemctl poweroff
 # Reiniciar la pc
 bindsym Control+Shift+2 exec --no-startup-id systemctl reboot
 # Suspender la pc
-bindsym Control+Shift+2 exec --no-startup-id systemctl suspend
+bindsym Control+Shift+3 exec --no-startup-id systemctl suspend
