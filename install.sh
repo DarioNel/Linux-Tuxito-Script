@@ -74,7 +74,7 @@ while [[ $aux -ne 1 && $aux -ne 2 && $aux -ne 3 && $aux -ne 4 ]]; do
 		4)
 		echo "Instalando i3wm"
   		updates
-		apt install xorg lightdm i3status rofi i3 thunar xfce4-power-manager kitty xfce4-screenshooter light-locker lxappearance policykit-1-gnome picom eom atril mousepad -y
+		apt install xorg lightdm i3status rofi i3 thunar xfce4-power-manager sakura xfce4-screenshooter light-locker lxappearance policykit-1-gnome picom eom atril mousepad -y
 		SystemApps
   		mkdir -p /root/.config/
   	  	mkdir -p /root/.config/i3/
