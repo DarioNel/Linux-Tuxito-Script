@@ -59,18 +59,18 @@ while [[ $aux -ne 1 && $aux -ne 2 && $aux -ne 3 && $aux -ne 4 && $aux -ne 5 ]]; 
 		SystemApps
 		themes
 		mkdir -p /root/.config
-		cp -r conf/gnome/ /root/.config/
+		cp -r configurations/gnome/ /root/.config/
 		echo "La Instalacion se a realizado exitosamente"
 		aux=1
 		;;
 		2)
 		echo "Instalando Cinnamon Desktop"
   		updates
-		apt install cinnamon-core lightdm muffin cinnamon-control-center nemo cinnamon-power-manager gnome-disk-utility gnome-system-monitor gnome-terminal network-manager-gnome gnome-screenshot gedit eog evince -y
+		apt install cinnamon-core lightdm muffin cinnamon-control-center nemo cinnamon-settings-daemon gnome-disk-utility gnome-system-monitor gnome-terminal network-manager-gnome gnome-screenshot gedit eog evince -y
 		SystemApps
 		themes
 		mkdir -p /root/.config
-		cp -r conf/cinnamon/ /root/.config/
+		cp -r configurations/cinnamon/ /root/.config/
 		echo "La Instalacion se a realizado exitosamente"
 		aux=2
 		;;
@@ -81,7 +81,7 @@ while [[ $aux -ne 1 && $aux -ne 2 && $aux -ne 3 && $aux -ne 4 && $aux -ne 5 ]]; 
 		SystemApps
 		themes
 		mkdir -p /root/.config
-		cp -r conf/mate/ /root/.config/
+		cp -r configurations/mate/ /root/.config/
     		echo "La Instalacion se a realizado exitosamente"
 		aux=3
 		;;
@@ -92,7 +92,7 @@ while [[ $aux -ne 1 && $aux -ne 2 && $aux -ne 3 && $aux -ne 4 && $aux -ne 5 ]]; 
 		SystemApps
 		themes
     		mkdir -p /root/.config
-		cp -r conf/xfce4 /root/.config/
+		cp -r configurations/xfce4 /root/.config/
 	   	echo "La Instalacion se a realizado exitosamente"
 		aux=4
 		;;
@@ -104,7 +104,7 @@ while [[ $aux -ne 1 && $aux -ne 2 && $aux -ne 3 && $aux -ne 4 && $aux -ne 5 ]]; 
   		mkdir -p /root/.config/
   	  	mkdir -p /root/.config/i3/
 		mkdir -p /root/.config/gtk-3.0/
-  		cp -r conf/i3wm/config /root/.config/i3/
+  		cp -r configurations/i3wm/config /root/.config/i3/
 		# Borramos el archivo settings.ini con un echo vacio.
 		echo "" > /root/.config/gtk-3.0/settings.ini
 		# Creamos una variable donde ponemos las configuraciones en un string
@@ -148,13 +148,13 @@ apt install  linux-headers-$(uname -r) -y
 mkdir -p /usr/share/backgrounds/
 
 # Copiamos los fondos de pantalla al directorio backgrounds y desktop-base
-cp -r Customization/wallpapers/ /usr/share/backgrounds/
-cp -r Customization/wallpapers/*.jpeg *.png /usr/share/images/desktop-base/
-cp  Customization/img/tuxi.png /usr/share/icons/
+cp -r customization/wallpapers/ /usr/share/backgrounds/
+cp -r customization/wallpapers/*.jpeg *.png /usr/share/images/desktop-base/
+cp  customization/img/tuxi.png /usr/share/icons/
 
 # Cambiamos la imagen del grub
-cp Customization/wallpapers/grub-16x9.png  /usr/share/desktop-base/active-theme/grub/
-cp Customization/wallpapers/grub-4x3.png  /usr/share/desktop-base/active-theme/grub/
+cp customization/wallpapers/grub-16x9.png  /usr/share/desktop-base/active-theme/grub/
+cp customization/wallpapers/grub-4x3.png  /usr/share/desktop-base/active-theme/grub/
 
 # Personalizamos el lightdm
 
@@ -229,7 +229,7 @@ echo "$net" > /etc/network/interfaces
 # Agregamos nuestro usuario al archivo sudores
 
 echo "# Damos privilegios de sudo a nuestro usuario" >> /etc/sudoers
-echo "linux  ALL=(ALL:ALL) ALL" >> /etc/sudoers
+echo "linux  ALL=(ALL:ALL) ALL" >> /etc/sudoers # <---CAMBIAR EL USUARIO linux por tu usuario
 
 # Copiamos toda la configuracion del usuario root al usuario que creamos
 cp -r /root/.config/ /home/linux    # <---CAMBIAR EL USUARIO linux por tu usuario
