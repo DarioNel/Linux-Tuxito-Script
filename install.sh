@@ -19,8 +19,8 @@ function SystemApps(){
 
 function themes(){
 	# Copiamos los temas e iconos
-	cp -r Customization/themes/Flat-Remix-* /usr/share/themes/
-	cp -r Customization/icons/Flat-Remix-*  /usr/share/icons/
+	cp -r customization/themes/Flat-Remix-* /usr/share/themes/
+	cp -r customization/icons/Flat-Remix-*  /usr/share/icons/
 }
 
 # Iniciamos el bucle while.
@@ -59,7 +59,7 @@ while [[ $aux -ne 1 && $aux -ne 2 && $aux -ne 3 && $aux -ne 4 && $aux -ne 5 ]]; 
 		SystemApps
 		themes
 		mkdir -p /root/.config
-		cp -r Desktops/gnome/ /root/.config/
+		cp -r conf/gnome/ /root/.config/
 		echo "La Instalacion se a realizado exitosamente"
 		aux=1
 		;;
@@ -70,7 +70,7 @@ while [[ $aux -ne 1 && $aux -ne 2 && $aux -ne 3 && $aux -ne 4 && $aux -ne 5 ]]; 
 		SystemApps
 		themes
 		mkdir -p /root/.config
-		cp -r Desktops/cinnamon/ /root/.config/
+		cp -r conf/cinnamon/ /root/.config/
 		echo "La Instalacion se a realizado exitosamente"
 		aux=2
 		;;
@@ -81,8 +81,8 @@ while [[ $aux -ne 1 && $aux -ne 2 && $aux -ne 3 && $aux -ne 4 && $aux -ne 5 ]]; 
 		SystemApps
 		themes
 		mkdir -p /root/.config
-		cp -r Desktops/mate/ /root/.config/
-    	echo "La Instalacion se a realizado exitosamente"
+		cp -r conf/mate/ /root/.config/
+    		echo "La Instalacion se a realizado exitosamente"
 		aux=3
 		;;
 		4)
@@ -91,9 +91,9 @@ while [[ $aux -ne 1 && $aux -ne 2 && $aux -ne 3 && $aux -ne 4 && $aux -ne 5 ]]; 
 		apt install xfdesktop4 lightdm xfce4-panel xfce4-whiskermenu-plugin xfwm4 xfce4-session xfce4-settings thunar xfce4-power-manager gnome-disk-utility  xfce4-taskmanager xfce4-terminal network-manager-gnome xfce4-screenshooter xfce4-notifyd mugshot xfce4-pulseaudio-plugin mousepad ristretto evince -y
 		SystemApps
 		themes
-    	mkdir -p /root/.config
-		cp -r Desktops/xfce4 /root/.config/
-	    echo "La Instalacion se a realizado exitosamente"
+    		mkdir -p /root/.config
+		cp -r conf/xfce4 /root/.config/
+	   	echo "La Instalacion se a realizado exitosamente"
 		aux=4
 		;;
 		5)
@@ -104,7 +104,7 @@ while [[ $aux -ne 1 && $aux -ne 2 && $aux -ne 3 && $aux -ne 4 && $aux -ne 5 ]]; 
   		mkdir -p /root/.config/
   	  	mkdir -p /root/.config/i3/
 		mkdir -p /root/.config/gtk-3.0/
-  		cp -r Destops/i3wm/config /root/.config/i3/
+  		cp -r conf/i3wm/config /root/.config/i3/
 		# Borramos el archivo settings.ini con un echo vacio.
 		echo "" > /root/.config/gtk-3.0/settings.ini
 		# Creamos una variable donde ponemos las configuraciones en un string
@@ -128,7 +128,7 @@ while [[ $aux -ne 1 && $aux -ne 2 && $aux -ne 3 && $aux -ne 4 && $aux -ne 5 ]]; 
 		"
 		# Imprimimos el contenido dentro del archivo settings.ini con todas las configuraciones.
 		echo "$i3theme" > /root/.config/gtk-3.0/settings.ini
-	    echo "La Instalacion se a realizado exitosamente"
+	    	echo "La Instalacion se a realizado exitosamente"
 		aux=5
 		;;
 		0)
@@ -151,6 +151,7 @@ mkdir -p /usr/share/backgrounds/
 cp -r Customization/wallpapers/ /usr/share/backgrounds/
 cp -r Customization/wallpapers/*.jpeg *.png /usr/share/images/desktop-base/
 cp  Customization/img/tuxi.png /usr/share/icons/
+
 # Cambiamos la imagen del grub
 cp Customization/wallpapers/grub-16x9.png  /usr/share/desktop-base/active-theme/grub/
 cp Customization/wallpapers/grub-4x3.png  /usr/share/desktop-base/active-theme/grub/
@@ -181,12 +182,6 @@ icon-theme-name = ePapirus-Dark
 "
 # Imprimimos el contenido dentro del archivo 01_debian.conf con todas las configuraciones.
 echo "$lightdm" > /usr/share/lightdm/lightdm-gtk-greeter.conf.d/01_debian.conf
-
-# Creamos el directorio neofetch
-# mkdir -p /root/.config/neofetch/
-
-# Copiamos los archivos de configuracion de neofetch
-#cp -v config.conf /root/.config/neofetch/
 
 # Borramos el archivo os-release con un echo vacio.
 echo "" > /etc/os-release
