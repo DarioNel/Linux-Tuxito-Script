@@ -15,8 +15,16 @@ function SystemApps(){
         echo "Los paquetes fueron instalados correctamente"
 }
 
+# Declaramos una funcion para copiar los temas e iconos a los Desktops
+
+function themes(){
+	# Copiamos los temas e iconos
+	cp -r Customization/themes/Flat-Remix-* /usr/share/themes/
+	cp -r Customization/icons/Flat-Remix-*  /usr/share/icons/
+}
+
 # Iniciamos el bucle while.
-while [[ $aux -ne 1 && $aux -ne 2 && $aux -ne 3 && $aux -ne 4 ]]; do
+while [[ $aux -ne 1 && $aux -ne 2 && $aux -ne 3 && $aux -ne 4 && $aux -ne 5 ]]; do
 	# Selecion del entorno de escritorio
 	echo ""
 	echo -e "\e[33m#-----------------------------------------------------------------------------#\e[m"
@@ -35,9 +43,10 @@ while [[ $aux -ne 1 && $aux -ne 2 && $aux -ne 3 && $aux -ne 4 ]]; do
 	echo -e "Presione\e[m"
 	echo -e ""
 	echo -e "\e[32m 1 Para instalar Gnome Desktop"
-	echo -e " 2 Para instalar Mate Desktop"
-	echo -e " 3 Para instalar Xfce Desktop"
-	echo -e " 4 Para instalar i3wm\e[32m"
+	echo -e " 2 Para instalar Cinnamon Desktop"
+	echo -e " 3 Para instalar Mate Desktop"
+	echo -e " 4 Para instalar Xfce Desktop"
+	echo -e " 5 Para instalar i3wm\e[32m"
 	echo -e "\e[31m 0 Para salir de la instalación\e[m"
 	#echo -e "\e[32m"
 	read desktop
@@ -48,30 +57,46 @@ while [[ $aux -ne 1 && $aux -ne 2 && $aux -ne 3 && $aux -ne 4 ]]; do
   		updates
 		apt install gnome-core gdm3 mutter gnome-session gnome-control-center gnome-tweaks nautilus gnome-power-manager gnome-disk-utility gnome-system-monitor gnome-terminal network-manager-gnome gnome-screenshot gedit eog evince -y
 		SystemApps
+		themes
+		mkdir -p /root/.config
+		cp -r Desktops/gnome/ /root/.config/
 		echo "La Instalacion se a realizado exitosamente"
 		aux=1
 		;;
 		2)
-		echo "Instalando Mate Desktop"
+		echo "Instalando Cinnamon Desktop"
   		updates
+		apt install cinnamon-core lightdm muffin cinnamon-control-center nemo cinnamon-power-manager gnome-disk-utility gnome-system-monitor gnome-terminal network-manager-gnome gnome-screenshot gedit eog evince -y
 		SystemApps
+		themes
 		mkdir -p /root/.config
-		cp -v -r mate /root/.config/
-		apt install mate-core lightdm mate-panel mate-applet-brisk-menu mate-menu marco mate-session-manager mate-control-center mate-tweak caja mate-power-manager  gnome-disk-utility mate-system-monitor mate-terminal network-manager-gnome mate-utils mate-media pluma eom atril -y
-      		echo "La Instalacion se a realizado exitosamente"
+		cp -r Desktops/cinnamon/ /root/.config/
+		echo "La Instalacion se a realizado exitosamente"
 		aux=2
 		;;
 		3)
+		echo "Instalando Mate Desktop"
+  		updates
+		apt install mate-core lightdm mate-panel mate-applet-brisk-menu mate-menu marco mate-session-manager mate-control-center mate-tweak caja mate-power-manager  gnome-disk-utility mate-system-monitor mate-terminal network-manager-gnome mate-utils mate-media pluma eom atril -y
+		SystemApps
+		themes
+		mkdir -p /root/.config
+		cp -r Desktops/mate/ /root/.config/
+    	echo "La Instalacion se a realizado exitosamente"
+		aux=3
+		;;
+		4)
 		echo "Instalando Xfce Desktop"
   		updates
 		apt install xfdesktop4 lightdm xfce4-panel xfce4-whiskermenu-plugin xfwm4 xfce4-session xfce4-settings thunar xfce4-power-manager gnome-disk-utility  xfce4-taskmanager xfce4-terminal network-manager-gnome xfce4-screenshooter xfce4-notifyd mugshot xfce4-pulseaudio-plugin mousepad ristretto evince -y
 		SystemApps
-    		mkdir -p /root/.config
-		cp -v -r xfce4 /root/.config/
-	        echo "La Instalacion se a realizado exitosamente"
-		aux=3
+		themes
+    	mkdir -p /root/.config
+		cp -r Desktops/xfce4 /root/.config/
+	    echo "La Instalacion se a realizado exitosamente"
+		aux=4
 		;;
-		4)
+		5)
 		echo "Instalando i3wm"
   		updates
 		apt install xorg lightdm i3status rofi i3 thunar xfce4-power-manager sakura xfce4-screenshooter light-locker lxappearance policykit-1-gnome picom eom atril mousepad -y
@@ -79,7 +104,7 @@ while [[ $aux -ne 1 && $aux -ne 2 && $aux -ne 3 && $aux -ne 4 ]]; do
   		mkdir -p /root/.config/
   	  	mkdir -p /root/.config/i3/
 		mkdir -p /root/.config/gtk-3.0/
-  		cp -v config /root/.config/i3/
+  		cp -r Destops/i3wm/config /root/.config/i3/
 		# Borramos el archivo settings.ini con un echo vacio.
 		echo "" > /root/.config/gtk-3.0/settings.ini
 		# Creamos una variable donde ponemos las configuraciones en un string
@@ -103,8 +128,8 @@ while [[ $aux -ne 1 && $aux -ne 2 && $aux -ne 3 && $aux -ne 4 ]]; do
 		"
 		# Imprimimos el contenido dentro del archivo settings.ini con todas las configuraciones.
 		echo "$i3theme" > /root/.config/gtk-3.0/settings.ini
-	        echo "La Instalacion se a realizado exitosamente"
-		aux=4
+	    echo "La Instalacion se a realizado exitosamente"
+		aux=5
 		;;
 		0)
 		echo "Saliendo de la instalacion ..."
@@ -119,17 +144,16 @@ done
 # Actualizamos los modulos del kernel
 apt install  linux-headers-$(uname -r) -y
 
-# Copiamos los temas e iconos
-cp -v -r themes/Flat-Remix-* /usr/share/themes/
-cp -v -r icons/Flat-Remix-*  /usr/share/icons/
-cp -v tuxi.png /usr/share/icons/
-
 # Creamos el directorio background
 mkdir -p /usr/share/backgrounds/
 
 # Copiamos los fondos de pantalla al directorio backgrounds y desktop-base
-cp -v -r fondos /usr/share/backgrounds/
-cp -v -r fondos/*.jpeg *.png /usr/share/images/desktop-base/
+cp -r Customization/wallpapers/ /usr/share/backgrounds/
+cp -r Customization/wallpapers/*.jpeg *.png /usr/share/images/desktop-base/
+cp  Customization/img/tuxi.png /usr/share/icons/
+# Cambiamos la imagen del grub
+cp Customization/wallpapers/grub-16x9.png  /usr/share/desktop-base/active-theme/grub/
+cp Customization/wallpapers/grub-4x3.png  /usr/share/desktop-base/active-theme/grub/
 
 # Personalizamos el lightdm
 
@@ -142,7 +166,7 @@ lightdm="
 
 [greeter]
 #background=/usr/share/images/desktop-base/login-background.svg
-background=/usr/share/backgrounds/fondos/tuxito.png
+background=/usr/share/backgrounds/wallpapers/tuxito.png
 theme-name=Adwaita
 xft-antialias=true
 xft-hintstyle=hintfull
@@ -158,15 +182,11 @@ icon-theme-name = ePapirus-Dark
 # Imprimimos el contenido dentro del archivo 01_debian.conf con todas las configuraciones.
 echo "$lightdm" > /usr/share/lightdm/lightdm-gtk-greeter.conf.d/01_debian.conf
 
-# Cambiamos la imagen del grub
-cp -v fondos/grub-16x9.png  /usr/share/desktop-base/active-theme/grub/
-cp -v fondos/grub-4x3.png  /usr/share/desktop-base/active-theme/grub/
-
 # Creamos el directorio neofetch
-mkdir -p /root/.config/neofetch/
+# mkdir -p /root/.config/neofetch/
 
 # Copiamos los archivos de configuracion de neofetch
-cp -v config.conf /root/.config/neofetch/
+#cp -v config.conf /root/.config/neofetch/
 
 # Borramos el archivo os-release con un echo vacio.
 echo "" > /etc/os-release
@@ -217,7 +237,7 @@ echo "# Damos privilegios de sudo a nuestro usuario" >> /etc/sudoers
 echo "linux  ALL=(ALL:ALL) ALL" >> /etc/sudoers
 
 # Copiamos toda la configuracion del usuario root al usuario que creamos
-cp -v -r /root/.config/ /home/linux    # <---CAMBIAR EL USUARIO linux por tu usuario
+cp -r /root/.config/ /home/linux    # <---CAMBIAR EL USUARIO linux por tu usuario
 
 # Cambiar los permisos de usuario
 chown -R linux:linux /home/linux/.config   # <---CAMBIAR EL USUARIO linux por tu usuario
