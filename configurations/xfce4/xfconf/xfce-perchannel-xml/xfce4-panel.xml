@@ -4,19 +4,19 @@
   <property name="configver" type="int" value="2"/>
   <property name="panels" type="array">
     <value type="int" value="1"/>
-    <property name="dark-mode" type="bool" value="false"/>
+    <property name="dark-mode" type="bool" value="true"/>
     <property name="panel-1" type="empty">
-      <property name="position" type="string" value="p=6;x=0;y=0"/>
-      <property name="length" type="uint" value="100"/>
+      <property name="position" type="string" value="p=8;x=683;y=750"/>
+      <property name="length" type="double" value="100"/>
       <property name="position-locked" type="bool" value="true"/>
       <property name="icon-size" type="uint" value="28"/>
-      <property name="size" type="uint" value="34"/>
+      <property name="size" type="uint" value="37"/>
       <property name="plugin-ids" type="array">
         <value type="int" value="1"/>
         <value type="int" value="7"/>
         <value type="int" value="15"/>
-        <value type="int" value="17"/>
         <value type="int" value="16"/>
+        <value type="int" value="17"/>
         <value type="int" value="18"/>
         <value type="int" value="19"/>
         <value type="int" value="2"/>
@@ -29,9 +29,16 @@
         <value type="int" value="5"/>
       </property>
       <property name="background-style" type="uint" value="1"/>
-      <property name="enter-opacity" type="uint" value="80"/>
-      <property name="leave-opacity" type="uint" value="80"/>
+      <property name="enter-opacity" type="uint" value="100"/>
+      <property name="leave-opacity" type="uint" value="100"/>
       <property name="disable-struts" type="bool" value="false"/>
+      <property name="nrows" type="uint" value="1"/>
+      <property name="background-rgba" type="array">
+        <value type="double" value="0.003733333333333342"/>
+        <value type="double" value="0.032133333333333361"/>
+        <value type="double" value="0.070000000000000007"/>
+        <value type="double" value="1"/>
+      </property>
     </property>
   </property>
   <property name="plugins" type="empty">
@@ -51,12 +58,22 @@
     <property name="plugin-6" type="string" value="systray">
       <property name="square-icons" type="bool" value="true"/>
       <property name="known-legacy-items" type="array">
+        <value type="string" value="wi-fi network connection “wifi-2.4ghz” active: wifi-2.4ghz (54%)"/>
+        <value type="string" value="wi-fi network connection “wifi-2.4ghz” active: wifi-2.4ghz (62%)"/>
+        <value type="string" value="wi-fi network connection “wifi-2.4ghz” active: wifi-2.4ghz (60%)"/>
+        <value type="string" value="wi-fi network connection “wifi-2.4ghz” active: wifi-2.4ghz (66%)"/>
+        <value type="string" value="networkmanager applet"/>
+        <value type="string" value="ibus panel"/>
         <value type="string" value="miniaplicación gestor de la red"/>
+      </property>
+      <property name="known-items" type="array">
+        <value type="string" value="vlc"/>
       </property>
     </property>
     <property name="plugin-8" type="string" value="pulseaudio">
       <property name="enable-keyboard-shortcuts" type="bool" value="true"/>
       <property name="show-notifications" type="bool" value="true"/>
+      <property name="mpris-players" type="string" value="firefox.instance2179;firefox.instance_1_70;vlc"/>
     </property>
     <property name="plugin-9" type="string" value="power-manager-plugin"/>
     <property name="plugin-10" type="string" value="notification-plugin"/>
@@ -82,7 +99,7 @@
     </property>
     <property name="plugin-18" type="string" value="launcher">
       <property name="items" type="array">
-        <value type="string" value="17110439386.desktop"/>
+        <value type="string" value="17187620081.desktop"/>
       </property>
     </property>
     <property name="plugin-19" type="string" value="separator">
