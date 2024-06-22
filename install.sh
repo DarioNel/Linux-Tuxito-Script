@@ -101,7 +101,7 @@ while [[ $aux -ne 1 && $aux -ne 2 && $aux -ne 3 && $aux -ne 4 && $aux -ne 5 && $
 		5)
 		echo "Instalando Lxde Desktop"
   		updates
-		apt install lxde-core lightdm mousepad ristretto evince -y
+		apt install lxde-core lightdm lxpanel lxsession-edit lxsession pcmanfm lxtask lxterminal nm-tray lxinput lxrandr lxappearance galculator mousepad gpicview evince -y
 		SystemApps
 		themes
     		mkdir -p /root/.config
@@ -112,7 +112,7 @@ while [[ $aux -ne 1 && $aux -ne 2 && $aux -ne 3 && $aux -ne 4 && $aux -ne 5 && $
 		6)
 		echo "Instalando Lxqt Desktop"
   		updates
-		apt install lxqt-core lightdm mousepad ristretto evince -y
+		apt install lxqt-core lightdm mousepad evince -y
 		SystemApps
 		themes
     		mkdir -p /root/.config
