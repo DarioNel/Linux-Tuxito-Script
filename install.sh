@@ -24,7 +24,7 @@ function themes(){
 }
 
 # Iniciamos el bucle while.
-while [[ $aux -ne 1 && $aux -ne 2 && $aux -ne 3 && $aux -ne 4 && $aux -ne 5 && $aux -ne 6 && $aux -ne 7 ]]; do
+while [[ $aux -ne 1 && $aux -ne 2 && $aux -ne 3 && $aux -ne 4 && $aux -ne 5 && $aux -ne 6 && $aux -ne 7 && $aux -ne 8 ]]; do
 	# Selecion del entorno de escritorio
 	echo ""
 	echo -e "\e[33m#-----------------------------------------------------------------------------#\e[m"
@@ -43,12 +43,13 @@ while [[ $aux -ne 1 && $aux -ne 2 && $aux -ne 3 && $aux -ne 4 && $aux -ne 5 && $
 	echo -e "Presione\e[m"
 	echo -e ""
 	echo -e "\e[32m 1 Para instalar Gnome Desktop"
-	echo -e " 2 Para instalar Cinnamon Desktop"
-	echo -e " 3 Para instalar Mate Desktop"
-	echo -e " 4 Para instalar Xfce Desktop"
-	echo -e " 5 Para instalar Lxde Desktop"
-	echo -e " 6 Para instalar Lxqt Desktop"
-	echo -e " 7 Para instalar i3wm\e[32m"
+	echo -e " 2 Para instalar KDE Plasma Desktop"
+	echo -e " 3 Para instalar Cinnamon Desktop"
+	echo -e " 4 Para instalar Mate Desktop"
+	echo -e " 5 Para instalar Xfce Desktop"
+	echo -e " 6 Para instalar Lxde Desktop"
+	echo -e " 7 Para instalar Lxqt Desktop"
+	echo -e " 8 Para instalar i3wm\e[32m"
 	echo -e "\e[31m 0 Para salir de la instalación\e[m"
 	#echo -e "\e[32m"
 	read desktop
@@ -66,6 +67,17 @@ while [[ $aux -ne 1 && $aux -ne 2 && $aux -ne 3 && $aux -ne 4 && $aux -ne 5 && $
 		aux=1
 		;;
 		2)
+		echo "Instalando KDE Plasma Desktop"
+  		updates
+		apt install plasma-desktop sddm kwin systemsettings dolphin plasma-disks plasma-systemmonitor konsole ksnapshot kate gwenview okular -y
+		SystemApps
+		themes
+		mkdir -p /root/.config
+		cp -r configurations/kde/ /root/.config/
+		echo "La Instalacion se a realizado exitosamente"
+		aux=2
+		;;
+		3)
 		echo "Instalando Cinnamon Desktop"
   		updates
 		apt install cinnamon-core lightdm muffin cinnamon-control-center nemo cinnamon-settings-daemon gnome-disk-utility gnome-system-monitor gnome-terminal network-manager-gnome gnome-screenshot gedit eog evince -y
@@ -74,9 +86,9 @@ while [[ $aux -ne 1 && $aux -ne 2 && $aux -ne 3 && $aux -ne 4 && $aux -ne 5 && $
 		mkdir -p /root/.config
 		cp -r configurations/cinnamon/ /root/.config/
 		echo "La Instalacion se a realizado exitosamente"
-		aux=2
+		aux=3
 		;;
-		3)
+		4)
 		echo "Instalando Mate Desktop"
   		updates
 		apt install mate-core lightdm mate-panel mate-applet-brisk-menu mate-menu marco mate-session-manager mate-control-center mate-tweak caja mate-power-manager  gnome-disk-utility mate-system-monitor mate-terminal network-manager-gnome mate-utils mate-media pluma eom atril -y
@@ -85,9 +97,9 @@ while [[ $aux -ne 1 && $aux -ne 2 && $aux -ne 3 && $aux -ne 4 && $aux -ne 5 && $
 		mkdir -p /root/.config
 		cp -r configurations/mate/ /root/.config/
     		echo "La Instalacion se a realizado exitosamente"
-		aux=3
+		aux=4
 		;;
-		4)
+		5)
 		echo "Instalando Xfce Desktop"
   		updates
 		apt install xfdesktop4 lightdm xfce4-panel xfce4-whiskermenu-plugin xfwm4 xfce4-session xfce4-settings thunar xfce4-power-manager gnome-disk-utility  xfce4-taskmanager xfce4-terminal network-manager-gnome xfce4-screenshooter xfce4-notifyd mugshot xfce4-pulseaudio-plugin mousepad ristretto evince -y
@@ -96,20 +108,20 @@ while [[ $aux -ne 1 && $aux -ne 2 && $aux -ne 3 && $aux -ne 4 && $aux -ne 5 && $
     		mkdir -p /root/.config
 		cp -r configurations/xfce4 /root/.config/
 	   	echo "La Instalacion se a realizado exitosamente"
-		aux=4
+		aux=5
 		;;
-		5)
+		6)
 		echo "Instalando Lxde Desktop"
   		updates
 		apt install lxde-core lightdm lxpanel lxsession-edit lxsession pcmanfm lxtask lxterminal nm-tray lxinput lxrandr lxappearance galculator mousepad gpicview evince -y
 		SystemApps
 		themes
     		mkdir -p /root/.config
-		cp -r configurations/lxde /root/.config/
+		cp -r configurations/lxde/* /root/.config/
 	   	echo "La Instalacion se a realizado exitosamente"
-		aux=5
+		aux=6
 		;;
-		6)
+		7)
 		echo "Instalando Lxqt Desktop"
   		updates
 		apt install lxqt-core lightdm mousepad evince -y
@@ -118,9 +130,9 @@ while [[ $aux -ne 1 && $aux -ne 2 && $aux -ne 3 && $aux -ne 4 && $aux -ne 5 && $
     		mkdir -p /root/.config
 		cp -r configurations/lxqt /root/.config/
 	   	echo "La Instalacion se a realizado exitosamente"
-		aux=6
+		aux=7
 		;;
-		7)
+		8)
 		echo "Instalando i3wm"
   		updates
 		apt install xorg lightdm i3status rofi i3 thunar xfce4-power-manager sakura xfce4-screenshooter light-locker lxappearance policykit-1-gnome picom eom atril mousepad -y
@@ -153,7 +165,7 @@ while [[ $aux -ne 1 && $aux -ne 2 && $aux -ne 3 && $aux -ne 4 && $aux -ne 5 && $
 		# Imprimimos el contenido dentro del archivo settings.ini con todas las configuraciones.
 		echo "$i3theme" > /root/.config/gtk-3.0/settings.ini
 	    	echo "La Instalacion se a realizado exitosamente"
-		aux=7
+		aux=8
 		;;
 		0)
 		echo "Saliendo de la instalacion ..."
