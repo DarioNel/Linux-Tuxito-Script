@@ -84,7 +84,7 @@ while [[ $aux -ne 1 && $aux -ne 2 && $aux -ne 3 && $aux -ne 4 && $aux -ne 5 && $
 		SystemApps
 		themes
 		mkdir -p /root/.config
-		cp -r configurations/cinnamon/ /root/.config/
+		cp -r configurations/cinnamon/* /root/.config/
 		echo "La Instalacion se a realizado exitosamente"
 		aux=3
 		;;

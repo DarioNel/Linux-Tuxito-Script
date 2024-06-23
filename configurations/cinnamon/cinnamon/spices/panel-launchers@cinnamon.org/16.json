@@ -13,8 +13,7 @@
         "value": [
             "firefox.desktop",
             "org.gnome.Terminal.desktop",
-            "nemo.desktop",
-            "cinnamon-custom-launcher-1.desktop"
+            "nemo.desktop"
         ]
     },
     "allow-dragging": {
