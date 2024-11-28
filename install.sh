@@ -183,10 +183,10 @@ apt install  linux-headers-$(uname -r) -y
 # Creamos el directorio background
 mkdir -p /usr/share/backgrounds/
 
-# Copiamos los fondos de pantalla al directorio backgrounds y desktop-base
+# Copiamos los fondos de pantalla al directorio backgrounds 
 cp -r customization/wallpapers/ /usr/share/backgrounds/
-cp -r customization/wallpapers/*.jpeg *.png /usr/share/images/desktop-base/
 cp  customization/img/tuxi.png /usr/share/icons/
+cp -r customization/icons/menu-debian/ /usr/share/icons/
 
 # Cambiamos la imagen del grub
 cp customization/wallpapers/grub-16x9.png  /usr/share/desktop-base/active-theme/grub/

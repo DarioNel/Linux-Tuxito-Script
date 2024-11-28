@@ -6,7 +6,7 @@
     <value type="int" value="1"/>
     <property name="dark-mode" type="bool" value="true"/>
     <property name="panel-1" type="empty">
-      <property name="position" type="string" value="p=8;x=683;y=750"/>
+      <property name="position" type="string" value="p=6;x=683;y=20"/>
       <property name="length" type="double" value="100"/>
       <property name="position-locked" type="bool" value="true"/>
       <property name="icon-size" type="uint" value="33"/>
@@ -15,10 +15,11 @@
         <value type="int" value="1"/>
         <value type="int" value="7"/>
         <value type="int" value="15"/>
+        <value type="int" value="14"/>
         <value type="int" value="16"/>
-        <value type="int" value="17"/>
-        <value type="int" value="18"/>
-        <value type="int" value="19"/>
+        <value type="int" value="20"/>
+        <value type="int" value="11"/>
+        <value type="int" value="21"/>
         <value type="int" value="2"/>
         <value type="int" value="3"/>
         <value type="int" value="10"/>
@@ -29,8 +30,8 @@
         <value type="int" value="5"/>
       </property>
       <property name="background-style" type="uint" value="0"/>
-      <property name="enter-opacity" type="uint" value="100"/>
-      <property name="leave-opacity" type="uint" value="100"/>
+      <property name="enter-opacity" type="uint" value="80"/>
+      <property name="leave-opacity" type="uint" value="80"/>
       <property name="disable-struts" type="bool" value="false"/>
       <property name="nrows" type="uint" value="1"/>
       <property name="background-rgba" type="array">
@@ -39,6 +40,7 @@
         <value type="double" value="0.070000000000000007"/>
         <value type="double" value="1"/>
       </property>
+      <property name="mode" type="uint" value="0"/>
     </property>
   </property>
   <property name="plugins" type="empty">
@@ -58,6 +60,42 @@
     <property name="plugin-6" type="string" value="systray">
       <property name="square-icons" type="bool" value="true"/>
       <property name="known-legacy-items" type="array">
+        <value type="string" value="wi-fi network connection “estudiantes” active: estudiantes (59%)"/>
+        <value type="string" value="wi-fi network connection “estudiantes” active: estudiantes (86%)"/>
+        <value type="string" value="wi-fi network connection “estudiantes” active: estudiantes (58%)"/>
+        <value type="string" value="wi-fi network connection “wifi-2.4ghz” active: wifi-2.4ghz (86%)"/>
+        <value type="string" value="wi-fi network connection “wifi-2.4ghz” active: wifi-2.4ghz (80%)"/>
+        <value type="string" value="wi-fi network connection “exa-hemeroteca” active: exa-hemeroteca (81%)"/>
+        <value type="string" value="requesting a wi-fi network address for “exa-hemeroteca”…"/>
+        <value type="string" value="wi-fi network connection “estudiantes” active: estudiantes (78%)"/>
+        <value type="string" value="wi-fi network connection “wifi-2.4ghz” active: wifi-2.4ghz (72%)"/>
+        <value type="string" value="wi-fi network connection “exa-hemeroteca” active: exa-hemeroteca (94%)"/>
+        <value type="string" value="wi-fi network connection “wifi-2.4ghz” active: wifi-2.4ghz (68%)"/>
+        <value type="string" value="wi-fi network connection “estudiantes” active: estudiantes (66%)"/>
+        <value type="string" value="wi-fi network connection “exa-hemeroteca” active: exa-hemeroteca (72%)"/>
+        <value type="string" value="wi-fi network connection “exa-hemeroteca” active: exa-hemeroteca (82%)"/>
+        <value type="string" value="wi-fi network connection “exa-hemeroteca” active: exa-hemeroteca (76%)"/>
+        <value type="string" value="wi-fi network connection “estudiantes” active: estudiantes (85%)"/>
+        <value type="string" value="wi-fi network connection “cisco26659” active: cisco26659 (82%)"/>
+        <value type="string" value="wi-fi network connection “estudiantes” active: estudiantes (92%)"/>
+        <value type="string" value="wi-fi network connection “estudiantes” active: estudiantes (74%)"/>
+        <value type="string" value="wi-fi network connection “wifi-2.4ghz” active: wifi-2.4ghz (88%)"/>
+        <value type="string" value="requesting a wi-fi network address for “estudiantes”…"/>
+        <value type="string" value="wi-fi network connection “estudiantes” active: estudiantes (84%)"/>
+        <value type="string" value="wi-fi network connection “estudiantes” active: estudiantes (70%)"/>
+        <value type="string" value="wi-fi network connection “estudiantes” active: estudiantes (99%)"/>
+        <value type="string" value="wi-fi network connection “wifi-2.4ghz” active: wifi-2.4ghz (76%)"/>
+        <value type="string" value="wi-fi network connection “wifi-2.4ghz” active: wifi-2.4ghz (70%)"/>
+        <value type="string" value="wi-fi network connection “wifi-2.4ghz” active: wifi-2.4ghz (74%)"/>
+        <value type="string" value="wi-fi network connection “wifi-2.4ghz” active: wifi-2.4ghz (82%)"/>
+        <value type="string" value="wi-fi network connection “wifi-2.4ghz” active: wifi-2.4ghz (78%)"/>
+        <value type="string" value="wi-fi network connection “wifi-2.4ghz” active: wifi-2.4ghz (84%)"/>
+        <value type="string" value="wi-fi network connection “wifi-2.4ghz” active: wifi-2.4ghz (50%)"/>
+        <value type="string" value="wi-fi network connection “estudiantes” active: estudiantes (80%)"/>
+        <value type="string" value="wi-fi network connection “estudiantes” active: estudiantes (76%)"/>
+        <value type="string" value="wi-fi network connection “estudiantes” active: estudiantes (82%)"/>
+        <value type="string" value="wi-fi network connection “estudiantes” active: estudiantes (88%)"/>
+        <value type="string" value="wi-fi network connection “wifi-2.4ghz” active: wifi-2.4ghz (52%)"/>
         <value type="string" value="wi-fi network connection “wifi-2.4ghz” active: wifi-2.4ghz (56%)"/>
         <value type="string" value="wi-fi network connection “wifi-2.4ghz” active: wifi-2.4ghz (58%)"/>
         <value type="string" value="wi-fi network connection “wifi-2.4ghz” active: wifi-2.4ghz (54%)"/>
@@ -69,13 +107,16 @@
         <value type="string" value="miniaplicación gestor de la red"/>
       </property>
       <property name="known-items" type="array">
+        <value type="string" value="4K Video Downloader+"/>
+        <value type="string" value="ClipGrab"/>
+        <value type="string" value="remmina-icon"/>
         <value type="string" value="vlc"/>
       </property>
     </property>
     <property name="plugin-8" type="string" value="pulseaudio">
       <property name="enable-keyboard-shortcuts" type="bool" value="true"/>
       <property name="show-notifications" type="bool" value="true"/>
-      <property name="mpris-players" type="string" value="firefox.instance2179;firefox.instance_1_70;vlc"/>
+      <property name="mpris-players" type="string" value="firefox.instance2179;firefox.instance3757;firefox.instance_1_104;firefox.instance_1_105;firefox.instance_1_109;firefox.instance_1_128;firefox.instance_1_129;firefox.instance_1_132;firefox.instance_1_151;firefox.instance_1_152;firefox.instance_1_159;firefox.instance_1_178;firefox.instance_1_267;firefox.instance_1_58;firefox.instance_1_59;firefox.instance_1_60;firefox.instance_1_61;firefox.instance_1_62;firefox.instance_1_63;firefox.instance_1_64;firefox.instance_1_65;firefox.instance_1_66;firefox.instance_1_67;firefox.instance_1_70;firefox.instance_1_72;firefox.instance_1_73;firefox.instance_1_75;firefox.instance_1_76;firefox.instance_1_77;firefox.instance_1_80;firefox.instance_1_82;firefox.instance_1_83;firefox.instance_1_84;firefox.instance_1_85;firefox.instance_1_89;firefox.instance_1_91;firefox.instance_1_92;firefox.instance_1_93;vlc"/>
     </property>
     <property name="plugin-9" type="string" value="power-manager-plugin"/>
     <property name="plugin-10" type="string" value="notification-plugin"/>
@@ -83,29 +124,30 @@
       <property name="tooltip-format" type="string" value="%x"/>
       <property name="digital-layout" type="uint" value="3"/>
       <property name="digital-time-font" type="string" value="Sans 11"/>
+      <property name="mode" type="uint" value="2"/>
     </property>
     <property name="plugin-1" type="string" value="whiskermenu"/>
     <property name="plugin-7" type="string" value="separator">
       <property name="style" type="uint" value="1"/>
     </property>
     <property name="plugin-15" type="string" value="showdesktop"/>
+    <property name="plugin-14" type="string" value="launcher">
+      <property name="items" type="array">
+        <value type="string" value="17195973081.desktop"/>
+      </property>
+    </property>
     <property name="plugin-16" type="string" value="launcher">
       <property name="items" type="array">
-        <value type="string" value="17110429215.desktop"/>
+        <value type="string" value="17195973432.desktop"/>
       </property>
     </property>
-    <property name="plugin-17" type="string" value="launcher">
-      <property name="items" type="array">
-        <value type="string" value="17110428464.desktop"/>
-      </property>
+    <property name="plugin-11" type="string" value="pager">
+      <property name="rows" type="uint" value="1"/>
+      <property name="miniature-view" type="bool" value="false"/>
+      <property name="wrap-workspaces" type="bool" value="false"/>
+      <property name="numbering" type="bool" value="false"/>
     </property>
-    <property name="plugin-18" type="string" value="launcher">
-      <property name="items" type="array">
-        <value type="string" value="17187620081.desktop"/>
-      </property>
-    </property>
-    <property name="plugin-19" type="string" value="separator">
-      <property name="style" type="uint" value="1"/>
-    </property>
+    <property name="plugin-20" type="string" value="separator"/>
+    <property name="plugin-21" type="string" value="separator"/>
   </property>
 </channel>
