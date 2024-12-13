@@ -262,20 +262,49 @@ iface lo inet loopback
 # Imprimimos el contenido dentro del archivo interfaces con todas las configuraciones.
 echo "$net" > /etc/network/interfaces
 
+echo "La instalación esta por terminar debe configurar el nombre de usuario"
+
+loop=true
+
+while $loop ; do
+    echo "Ingrese el nombre de usuario que creo en la instalación:"
+    read nameuser1
+
+    echo "Vuelva a repetir en nombre de usuario:"
+    read nameuser2
+
+    if [ "$nameuser1" == "$nameuser2" ]; then
+        echo "¿Esta seguro que este fue el nombre de usuario que ha creado en la instalación?"
+        echo "Presione -y- para confirmar o cualquier tecla para volver a introducir"
+        read t
+        case $t in 
+            "y")
+                user="$nameuser1"
+                break
+                ;;
+            *)
+                echo "Volviendo al menu"
+                ;; 
+        esac
+    else
+        echo "Los nombres de usuarios no coinciden, vuelva a intentarlo"
+    fi
+done    
+
 # Agregamos nuestro usuario al archivo sudores
 
 echo "# Damos privilegios de sudo a nuestro usuario" >> /etc/sudoers
-echo "linux  ALL=(ALL:ALL) ALL" >> /etc/sudoers # <---CAMBIAR EL USUARIO linux por tu usuario
+echo "$user  ALL=(ALL:ALL) ALL" >> /etc/sudoers 
 
 # Copiamos toda la configuracion del usuario root al usuario que creamos
-cp -r /root/.config/ /home/linux    # <---CAMBIAR EL USUARIO linux por tu usuario
+cp -r /root/.config/ /home/$user   
 
 # Cambiar los permisos de usuario
-chown -R linux:linux /home/linux/.config   # <---CAMBIAR EL USUARIO linux por tu usuario
+chown -R $user:$user /home/$user/.config
 
 # Agregar al PATH las rutas del sistema para el usuario que creamos instalacion
-echo "export PATH=$PATH:/bin:/usr/bin:/sbin:/usr/sbin" >> /home/linux/.bashrc   # <---CAMBIAR EL USUARIO linux por tu usuario
-source /home/linux/.bashrc  # <---CAMBIAR EL USUARIO linux por tu usuario
+echo "export PATH=$PATH:/bin:/usr/bin:/sbin:/usr/sbin" >> /home/$user/.bashrc
+source /home/$user/.bashrc  
 
 # Habilitamos el firewall
 ufw enable
